@@ -4,15 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: {
-          DEFAULT: '#0A0A0A',
-          card: '#141414',
-          subtle: '#111111',
-        },
+        bg: '#0A0A0A',
         primary: '#D4AF37',
         accent: '#FACC15',
-        secondary: '#737373',
         tx: '#FAFAFA',
+        secondary: '#737373',
       },
       fontFamily: {
         mono: ['Fira Code', 'Fira Mono', 'monospace'],

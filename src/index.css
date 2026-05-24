@@ -17,9 +17,9 @@
 
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: #0A0A0A; }
-  ::-webkit-scrollbar-thumb { background: #D4AF3744; border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: #D4AF3788; }
-  ::selection { background: #D4AF3722; color: #D4AF37; }
+  ::-webkit-scrollbar-thumb { background: #D4AF3766; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+  ::selection { background: #D4AF3733; color: #FACC15; }
 }
 
 @layer utilities {
@@ -50,14 +50,14 @@
   .nav-link:hover::after { width: 100%; }
 
   .card {
-    background-color: #141414;
-    border: 1px solid #1F1F1F;
+    background-color: #0A0A0A;
+    border: 1px solid #737373;
     border-radius: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
   .card:hover {
-    border-color: #D4AF3744;
-    box-shadow: 0 4px 24px rgba(212, 175, 55, 0.08);
+    border-color: #D4AF37;
+    box-shadow: 0 4px 24px rgba(212, 175, 55, 0.12);
   }
 
   .skill-bar { position: relative; overflow: hidden; }
@@ -66,7 +66,7 @@
     position: absolute;
     top: 0; left: -100%;
     width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(250, 204, 21, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(250, 204, 21, 0.25), transparent);
     animation: shimmer 2s infinite;
   }
   @keyframes shimmer { 100% { left: 100%; } }
@@ -75,8 +75,8 @@
   .shape {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.1;
+    filter: blur(90px);
+    opacity: 0.08;
     animation: float-shape 8s ease-in-out infinite;
   }
   @keyframes float-shape {
