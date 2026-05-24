@@ -6,10 +6,10 @@ import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiArrowDown } from 'react-icon
 const roles = ['Full Stack Developer', 'Mobile App Developer', 'React Native Engineer', 'Flutter Developer', 'UI/UX Enthusiast']
 
 const socialLinks = [
-  { icon: FiGithub, href: 'https://github.com/patrickndaziramiye', label: 'GitHub' },
-  { icon: FiLinkedin, href: 'https://linkedin.com/in/patrickndaziramiye', label: 'LinkedIn' },
+  { icon: FiGithub, href: 'https://github.com/ndaziramiyep', label: 'GitHub' },
+  { icon: FiLinkedin, href: 'https://linkedin.com/in/patrick-ndaziramiyeaa4939251', label: 'LinkedIn' },
   { icon: FiTwitter, href: 'https://twitter.com/patrickndazi', label: 'Twitter' },
-  { icon: FiMail, href: 'mailto:ndaziramiye_222004090@stud.ur.ac.rw', label: 'Email' },
+  { icon: FiMail, href: 'mailto:patrickndaziramiye03@gmail.com', label: 'Email' },
 ]
 
 function Typewriter({ words }) {
@@ -65,9 +65,9 @@ export default function Hero() {
         className="hidden lg:flex fixed right-8 bottom-0 flex-col items-center gap-5 z-40"
       >
         <a href="mailto:ndaziramiye_222004090@stud.ur.ac.rw"
-          className="text-tx-faint hover:text-primary transition-all duration-300 hover:-translate-y-1 font-mono text-xs tracking-widest"
+          className="font-mono text-xs tracking-widest"
           style={{ writingMode: 'vertical-rl', color: '#737373' }}>
-          ndaziramiye_222004090@stud.ur.ac.rw
+          patrickndaziramiye03@gmail.com
         </a>
         <div className="w-px h-24 bg-border mt-2" />
       </motion.div>

@@ -4,16 +4,16 @@ import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiTwitter, FiSend, FiC
 import { SiWhatsapp } from 'react-icons/si'
 
 const contactInfo = [
-  { icon: FiMail, label: 'Email', value: 'ndaziramiye_222004090@stud.ur.ac.rw', href: 'mailto:ndaziramiye_222004090@stud.ur.ac.rw' },
-  { icon: FiPhone, label: 'Phone', value: '+250 788 000 000', href: 'tel:+250788000000' },
-  { icon: FiMapPin, label: 'Location', value: 'Kigali, Rwanda', href: 'https://maps.google.com/?q=Kigali,Rwanda' },
+  { icon: FiMail, label: 'Email', value: 'patrickndaziramiye03@gmail.com', href: 'mailto:patrickndaziramiye03@gmail.com' },
+  { icon: FiPhone, label: 'Phone', value: '+250 780 746 434', href: 'tel:+250780746434' },
+  { icon: FiMapPin, label: 'Location', value: 'Nyarugenge, Kigali, Rwanda', href: 'https://maps.google.com/?q=Nyarugenge,Kigali,Rwanda' },
 ]
 
 const socials = [
-  { icon: FiGithub, label: 'GitHub', href: 'https://github.com/patrickndaziramiye' },
-  { icon: FiLinkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/patrickndaziramiye' },
+  { icon: FiGithub, label: 'GitHub', href: 'https://github.com/ndaziramiyep' },
+  { icon: FiLinkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/patrick-ndaziramiyeaa4939251' },
   { icon: FiTwitter, label: 'Twitter', href: 'https://twitter.com/patrickndazi' },
-  { icon: SiWhatsapp, label: 'WhatsApp', href: 'https://wa.me/250788000000' },
+  { icon: SiWhatsapp, label: 'WhatsApp', href: 'https://wa.me/250780746434' },
 ]
 
 export default function Contact() {

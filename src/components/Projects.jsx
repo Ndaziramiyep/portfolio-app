@@ -6,46 +6,46 @@ const filters = ['All', 'Web', 'Mobile', 'Full Stack']
 
 const projects = [
   {
-    id: 1, title: 'ShopEase – E-Commerce Platform',
-    description: 'A full-featured e-commerce platform with real-time inventory, payment processing via Stripe, order tracking, and an admin dashboard.',
-    tech: ['React.js', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS', 'Redis'],
-    github: 'https://github.com/patrickndaziramiye/shopease', live: 'https://shopease-demo.vercel.app',
-    category: ['Web', 'Full Stack'], featured: true, stars: 48,
+    id: 1, title: 'Tea Leaf Disease Detector',
+    description: 'AI-powered Flutter app that detects crop diseases from photos, paired with a web dashboard helping farmers protect harvests faster.',
+    tech: ['Flutter', 'CNN / AI', 'Python', 'Firebase'],
+    github: 'https://github.com/ndaziramiyep', live: null,
+    category: ['Mobile'], featured: true, stars: 34,
   },
   {
-    id: 2, title: 'TaskFlow – Project Management App',
-    description: 'A cross-platform mobile app for team productivity. Real-time collaboration, Kanban boards, push notifications, and offline-first architecture.',
-    tech: ['React Native', 'Firebase', 'Expo', 'Redux Toolkit', 'TypeScript'],
-    github: 'https://github.com/patrickndaziramiye/taskflow', live: 'https://expo.dev/@patrickndazi/taskflow',
-    category: ['Mobile', 'Full Stack'], featured: true, stars: 35,
+    id: 2, title: 'Ease-Salon Booking App',
+    description: 'React Native salon and barbershop booking app delivering smooth appointment management and real-time service discovery.',
+    tech: ['React Native', 'Firebase', 'Expo', 'Node.js'],
+    github: 'https://github.com/ndaziramiyep', live: null,
+    category: ['Mobile', 'Full Stack'], featured: true, stars: 28,
   },
   {
-    id: 3, title: 'NutriTrack – Fitness & Nutrition App',
-    description: 'A Flutter-based mobile app for tracking daily nutrition, workout plans, and fitness goals with beautiful data visualizations.',
-    tech: ['Flutter', 'Dart', 'Django REST', 'PostgreSQL', 'SQLite'],
-    github: 'https://github.com/patrickndaziramiye/nutritrack', live: null,
-    category: ['Mobile'], featured: true, stars: 22,
+    id: 3, title: 'E-Commerce Platform',
+    description: 'Full-stack store with product listings, shopping cart, and secure user authentication built entirely from scratch.',
+    tech: ['React.js', 'Node.js', 'MongoDB', 'Express'],
+    github: 'https://github.com/ndaziramiyep', live: null,
+    category: ['Web', 'Full Stack'], featured: true, stars: 41,
   },
   {
-    id: 4, title: 'DevConnect – Developer Social Network',
-    description: 'A LinkedIn-style platform tailored for developers. Features GitHub integration, project showcasing, job board, and real-time messaging.',
-    tech: ['Next.js', 'GraphQL', 'PostgreSQL', 'TypeScript', 'Prisma', 'WebSocket'],
-    github: 'https://github.com/patrickndaziramiye/devconnect', live: 'https://devconnect-app.vercel.app',
-    category: ['Web', 'Full Stack'], featured: false, stars: 61,
+    id: 4, title: 'Driver-Assist',
+    description: 'On-the-road safety Flutter app connecting drivers to the nearest fuel stations, garages, and emergency services instantly.',
+    tech: ['Flutter', 'Dart', 'Google Maps API', 'Firebase'],
+    github: 'https://github.com/ndaziramiyep', live: null,
+    category: ['Mobile'], featured: false, stars: 19,
   },
   {
-    id: 5, title: 'QuickBite – Food Delivery App',
-    description: 'A complete food delivery ecosystem with customer app, restaurant dashboard, and delivery partner app — all in one Flutter project.',
-    tech: ['Flutter', 'Firebase', 'Google Maps API', 'Stripe', 'Node.js'],
-    github: 'https://github.com/patrickndaziramiye/quickbite', live: null,
-    category: ['Mobile', 'Full Stack'], featured: false, stars: 29,
+    id: 5, title: 'Personal Finance Tracker',
+    description: 'Mobile app for tracking personal finances, budgets, and expenses with intuitive data visualizations.',
+    tech: ['React Native', 'Firebase', 'Expo', 'TypeScript'],
+    github: 'https://github.com/ndaziramiyep', live: null,
+    category: ['Mobile'], featured: false, stars: 15,
   },
   {
-    id: 6, title: 'BlogStudio – CMS & Blog Engine',
-    description: 'A headless CMS and blogging platform with a rich markdown editor, SEO tools, analytics, and multi-author support.',
-    tech: ['Next.js', 'MDX', 'Supabase', 'TypeScript', 'Vercel Edge'],
-    github: 'https://github.com/patrickndaziramiye/blogstudio', live: 'https://blogstudio.vercel.app',
-    category: ['Web'], featured: false, stars: 17,
+    id: 6, title: 'Countries-GeoStats',
+    description: 'Flutter data explorer app presenting country profiles and global statistics through a clean, engaging interface.',
+    tech: ['Flutter', 'Dart', 'REST API'],
+    github: 'https://github.com/ndaziramiyep', live: null,
+    category: ['Mobile'], featured: false, stars: 12,
   },
 ]
 
@@ -141,7 +141,7 @@ export default function Projects() {
 
         <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.6 }} className="text-center mt-14">
           <p className="text-tx-muted mb-4">Want to see more?</p>
-          <a href="https://github.com/patrickndaziramiye" target="_blank" rel="noopener noreferrer"
+          <a href="https://github.com/ndaziramiyep" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-accent text-accent font-mono px-6 py-3 rounded-lg hover:bg-accent/10 transition-all duration-300 hover:-translate-y-1">
             <FiGithub size={18} /> View All on GitHub
           </a>

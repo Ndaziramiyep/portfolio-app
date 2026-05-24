@@ -1,58 +1,50 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import {
-  SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiTailwindcss, SiHtml5,
-  SiNodedotjs, SiExpress, SiPython, SiDjango, SiGraphql, SiPhp,
-  SiFlutter, SiDart, SiExpo, SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiRedis,
-  SiDocker, SiGit, SiGithub, SiVercel, SiLinux, SiFigma, SiPostman, SiVite, SiTrello,
+  SiReact, SiTypescript, SiJavascript, SiTailwindcss, SiHtml5,
+  SiNodedotjs, SiExpress, SiFirebase, SiMongodb, SiPostgresql,
+  SiFlutter, SiDart, SiExpo, SiGit, SiPostman, SiVite, SiAndroid,
 } from 'react-icons/si'
-import { FiMonitor, FiServer, FiSmartphone, FiDatabase, FiSettings, FiTool, FiCloud } from 'react-icons/fi'
+import { FiMonitor, FiServer, FiSmartphone, FiTool, FiSettings } from 'react-icons/fi'
 
 const skillCategories = [
   {
     title: 'Frontend', icon: FiMonitor,
     skills: [
-      { name: 'React.js', icon: SiReact, level: 95 }, { name: 'Next.js', icon: SiNextdotjs, level: 88 },
-      { name: 'TypeScript', icon: SiTypescript, level: 85 }, { name: 'JavaScript', icon: SiJavascript, level: 95 },
-      { name: 'Tailwind CSS', icon: SiTailwindcss, level: 92 }, { name: 'HTML5 / CSS3', icon: SiHtml5, level: 98 },
+      { name: 'HTML / CSS', icon: SiHtml5, level: 95 },
+      { name: 'JavaScript', icon: SiJavascript, level: 92 },
+      { name: 'TypeScript', icon: SiTypescript, level: 82 },
+      { name: 'React.js', icon: SiReact, level: 90 },
+      { name: 'Tailwind CSS', icon: SiTailwindcss, level: 88 },
     ],
   },
   {
     title: 'Backend', icon: FiServer,
     skills: [
-      { name: 'Node.js', icon: SiNodedotjs, level: 90 }, { name: 'Express.js', icon: SiExpress, level: 88 },
-      { name: 'Python', icon: SiPython, level: 85 }, { name: 'Django', icon: SiDjango, level: 80 },
-      { name: 'GraphQL', icon: SiGraphql, level: 75 }, { name: 'PHP / Laravel', icon: SiPhp, level: 72 },
+      { name: 'Node.js', icon: SiNodedotjs, level: 85 },
+      { name: 'Express.js', icon: SiExpress, level: 83 },
+      { name: 'Firebase', icon: SiFirebase, level: 88 },
+      { name: 'MongoDB', icon: SiMongodb, level: 80 },
+      { name: 'PostgreSQL', icon: SiPostgresql, level: 75 },
     ],
   },
   {
     title: 'Mobile', icon: FiSmartphone,
     skills: [
-      { name: 'React Native', icon: SiReact, level: 90 }, { name: 'Flutter', icon: SiFlutter, level: 85 },
-      { name: 'Dart', icon: SiDart, level: 82 }, { name: 'Expo', icon: SiExpo, level: 88 },
+      { name: 'React Native', icon: SiReact, level: 92 },
+      { name: 'Flutter', icon: SiFlutter, level: 88 },
+      { name: 'Dart', icon: SiDart, level: 85 },
+      { name: 'Expo', icon: SiExpo, level: 88 },
     ],
   },
   {
-    title: 'Databases', icon: FiDatabase,
+    title: 'Tools & Platforms', icon: FiTool,
     skills: [
-      { name: 'MongoDB', icon: SiMongodb, level: 88 }, { name: 'PostgreSQL', icon: SiPostgresql, level: 85 },
-      { name: 'MySQL', icon: SiMysql, level: 82 }, { name: 'Firebase', icon: SiFirebase, level: 88 },
-      { name: 'Redis', icon: SiRedis, level: 72 }, { name: 'Supabase', icon: FiDatabase, level: 78 },
-    ],
-  },
-  {
-    title: 'DevOps & Cloud', icon: FiSettings,
-    skills: [
-      { name: 'Docker', icon: SiDocker, level: 80 }, { name: 'Git', icon: SiGit, level: 95 },
-      { name: 'GitHub', icon: SiGithub, level: 95 }, { name: 'AWS', icon: FiCloud, level: 72 },
-      { name: 'Vercel', icon: SiVercel, level: 90 }, { name: 'Linux', icon: SiLinux, level: 80 },
-    ],
-  },
-  {
-    title: 'Tools & Design', icon: FiTool,
-    skills: [
-      { name: 'Figma', icon: SiFigma, level: 80 }, { name: 'Postman', icon: SiPostman, level: 90 },
-      { name: 'Vite', icon: SiVite, level: 90 }, { name: 'Trello', icon: SiTrello, level: 85 },
+      { name: 'Git / GitHub', icon: SiGit, level: 92 },
+      { name: 'VS Code', icon: SiVite, level: 95 },
+      { name: 'Android Studio', icon: SiAndroid, level: 80 },
+      { name: 'Postman', icon: SiPostman, level: 88 },
+      { name: 'CI/CD', icon: FiSettings, level: 75 },
     ],
   },
 ]
@@ -101,7 +93,7 @@ export default function Skills() {
             <motion.div key={title}
               initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: catIdx * 0.1, duration: 0.6 }}
-              whileHover={{ y: -4 }}
+              whileHover={{ y: 0 }}
               className="card p-6">
               <div className="flex items-center gap-3 mb-5">
                 <div className="p-2 rounded-lg bg-accent/10">

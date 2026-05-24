@@ -4,11 +4,11 @@ import { SiWhatsapp } from 'react-icons/si'
 import { Link } from 'react-scroll'
 
 const socials = [
-  { icon: FiGithub, href: 'https://github.com/patrickndaziramiye', label: 'GitHub' },
-  { icon: FiLinkedin, href: 'https://linkedin.com/in/patrickndaziramiye', label: 'LinkedIn' },
+  { icon: FiGithub, href: 'https://github.com/ndaziramiyep', label: 'GitHub' },
+  { icon: FiLinkedin, href: 'https://linkedin.com/in/patrick-ndaziramiyeaa4939251', label: 'LinkedIn' },
   { icon: FiTwitter, href: 'https://twitter.com/patrickndazi', label: 'Twitter' },
-  { icon: SiWhatsapp, href: 'https://wa.me/250788000000', label: 'WhatsApp' },
-  { icon: FiMail, href: 'mailto:ndaziramiye_222004090@stud.ur.ac.rw', label: 'Email' },
+  { icon: SiWhatsapp, href: 'https://wa.me/250780746434', label: 'WhatsApp' },
+  { icon: FiMail, href: 'mailto:patrickndaziramiye03@gmail.com', label: 'Email' },
 ]
 
 const quickLinks = [
@@ -64,7 +64,7 @@ export default function Footer() {
             </div>
             <p className="text-tx-muted text-sm">
               Available worldwide.{' '}
-              <a href="mailto:ndaziramiye_222004090@stud.ur.ac.rw" className="text-accent hover:underline">Say hello →</a>
+              <a href="mailto:patrickndaziramiye03@gmail.com" className="hover:underline" style={{ color: '#D4AF37' }}>Say hello →</a>
             </p>
           </div>
         </div>

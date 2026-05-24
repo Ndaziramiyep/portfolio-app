@@ -3,15 +3,17 @@ import { motion, useInView } from 'framer-motion'
 import { FiCode, FiSmartphone, FiServer, FiZap } from 'react-icons/fi'
 
 const highlights = [
-  { icon: FiCode, title: 'Frontend Dev', desc: 'Crafting responsive, pixel-perfect UIs with React.js, Next.js & Tailwind CSS' },
-  { icon: FiServer, title: 'Backend Dev', desc: 'Building robust REST APIs and services with Node.js, Django & PostgreSQL' },
-  { icon: FiSmartphone, title: 'Mobile Dev', desc: 'Delivering cross-platform mobile apps with React Native & Flutter' },
+  { icon: FiCode, title: 'Frontend Dev', desc: 'Crafting responsive UIs with React.js, TypeScript & Tailwind CSS' },
+  { icon: FiServer, title: 'Backend Dev', desc: 'Building REST APIs and services with Node.js & Firebase' },
+  { icon: FiSmartphone, title: 'Mobile Dev', desc: 'Delivering cross-platform apps with React Native & Flutter' },
   { icon: FiZap, title: 'Performance', desc: 'Optimizing for speed, scalability, and seamless user experiences' },
 ]
 
 const technologies = [
-  'JavaScript (ES6+)', 'TypeScript', 'React.js', 'React Native',
-  'Flutter / Dart', 'Node.js / Express', 'Python / Django', 'PostgreSQL / MongoDB',
+  'JavaScript / TypeScript', 'React.js / Next.js',
+  'React Native', 'Flutter / Dart',
+  'Node.js / Express', 'Firebase',
+  'Git / GitHub / CI/CD', 'Android Studio / VS Code',
 ]
 
 export default function About() {
@@ -23,28 +25,28 @@ export default function About() {
       <div className="section-container" ref={ref}>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }}
           className="flex items-center gap-4 mb-10 sm:mb-16">
-          <span className="text-accent font-mono text-lg">01.</span>
-          <h2 className="text-3xl font-bold text-tx">About Me</h2>
-          <div className="flex-1 h-px bg-border max-w-xs" />
+          <h2 className="text-3xl font-bold" style={{ color: '#FAFAFA' }}>About Me</h2>
+          <div className="flex-1 h-px max-w-xs" style={{ backgroundColor: 'rgba(212,175,55,0.2)' }} />
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -40 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.1 }} className="space-y-5">
-            <p className="text-tx-muted text-lg leading-relaxed">
-              Hello! I'm <span className="text-accent font-semibold">Patrick Ndaziramiye</span>, a passionate full stack and mobile developer based in <span className="text-tx">Kigali, Rwanda</span>.
+            <p className="text-lg leading-relaxed" style={{ color: '#737373' }}>
+              Hello! I'm <span className="font-semibold" style={{ color: '#D4AF37' }}>Patrick Ndaziramiye</span>, a passionate Full Stack & Mobile App Developer based in{' '}
+              <span style={{ color: '#FAFAFA' }}>Nyarugenge District, Kigali, Rwanda</span>.
             </p>
-            <p className="text-tx-muted leading-relaxed">
-              My journey into software development started with curiosity about how apps are built. Today, I specialize in crafting end-to-end solutions — from beautifully designed frontends to powerful, scalable backends and smooth mobile experiences.
+            <p className="leading-relaxed" style={{ color: '#737373' }}>
+              I build production-ready mobile and web applications — from React Native apps with native Java bridge integration to full-stack e-commerce platforms. I've worked in Agile teams, led code reviews, and shipped software under real-world project conditions at Kumva Insights and KLAB Academy.
             </p>
-            <p className="text-tx-muted leading-relaxed">
-              When I'm not writing code, you'll find me contributing to open source, mentoring junior developers, or exploring the latest in cloud-native and AI-powered development.
+            <p className="leading-relaxed" style={{ color: '#737373' }}>
+              I hold a BSc with Honors in Computer and Software Engineering from the University of Rwanda, and I'm certified by KLAB Academy, PLP Africa, Carnegie Mellon Africa, and CISCO.
             </p>
             <div className="pt-4">
-              <p className="text-tx-muted font-mono text-sm mb-4">Technologies I work with:</p>
+              <p className="font-mono text-sm mb-4" style={{ color: '#737373' }}>Technologies I work with:</p>
               <div className="grid grid-cols-2 gap-2">
                 {technologies.map((tech) => (
-                  <div key={tech} className="flex items-center gap-2 text-tx-muted text-sm">
-                    <span className="text-accent font-mono">▸</span>{tech}
+                  <div key={tech} className="flex items-center gap-2 text-sm" style={{ color: '#737373' }}>
+                    <span style={{ color: '#D4AF37' }}>▸</span>{tech}
                   </div>
                 ))}
               </div>
@@ -54,14 +56,15 @@ export default function About() {
           <motion.div initial={{ opacity: 0, x: 40 }} animate={inView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.2 }}>
             <div className="relative mb-8">
               <div className="relative mx-auto w-56 h-56">
-                <div className="absolute inset-0 rounded-2xl border-2 border-accent translate-x-4 translate-y-4" />
+                <div className="absolute inset-0 rounded-2xl translate-x-4 translate-y-4" style={{ border: '2px solid #D4AF37' }} />
                 <div className="card relative w-full h-full rounded-2xl flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-24 h-24 rounded-full bg-accent/10 border-2 border-accent mx-auto mb-3 flex items-center justify-center">
-                      <span className="text-accent font-bold text-4xl font-mono">P</span>
+                    <div className="w-24 h-24 rounded-full mx-auto mb-3 flex items-center justify-center"
+                      style={{ background: 'rgba(212,175,55,0.1)', border: '2px solid #D4AF37' }}>
+                      <span className="font-bold text-4xl font-mono" style={{ color: '#D4AF37' }}>P</span>
                     </div>
-                    <p className="text-tx font-semibold">Patrick Ndaziramiye</p>
-                    <p className="text-accent font-mono text-xs mt-1">Full Stack Dev</p>
+                    <p className="font-semibold" style={{ color: '#FAFAFA' }}>Patrick Ndaziramiye</p>
+                    <p className="font-mono text-xs mt-1" style={{ color: '#D4AF37' }}>Full Stack & Mobile Dev</p>
                   </div>
                 </div>
               </div>
@@ -73,9 +76,9 @@ export default function About() {
                   initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.3 + i * 0.1 }}
                   whileHover={{ y: -4 }}
                   className="card p-4 cursor-default">
-                  <Icon className="text-accent mb-2" size={20} />
-                  <h3 className="text-tx text-sm font-semibold mb-1">{title}</h3>
-                  <p className="text-tx-faint text-xs leading-relaxed">{desc}</p>
+                  <Icon className="mb-2" size={20} style={{ color: '#D4AF37' }} />
+                  <h3 className="text-sm font-semibold mb-1" style={{ color: '#FAFAFA' }}>{title}</h3>
+                  <p className="text-xs leading-relaxed" style={{ color: '#737373' }}>{desc}</p>
                 </motion.div>
               ))}
             </div>
