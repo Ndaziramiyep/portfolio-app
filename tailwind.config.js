@@ -10,18 +10,19 @@ export default {
           card: 'var(--bg-card)',
           subtle: 'var(--bg-subtle)',
         },
-        border: {
-          DEFAULT: 'var(--border)',
-        },
+        border: { DEFAULT: 'var(--border)' },
         tx: {
           DEFAULT: 'var(--tx)',
           muted: 'var(--tx-muted)',
           faint: 'var(--tx-faint)',
         },
+        primary: {
+          DEFAULT: '#3B82F6',
+          hover: '#2563EB',
+        },
         accent: {
-          DEFAULT: '#7c3aed',
-          hover: '#6d28d9',
-          soft: 'rgba(124,58,237,0.1)',
+          DEFAULT: '#8B5CF6',
+          hover: '#7C3AED',
         },
       },
       fontFamily: {
@@ -30,11 +31,9 @@ export default {
       },
       animation: {
         blink: 'blink 1s step-end infinite',
-        float: 'float 6s ease-in-out infinite',
       },
       keyframes: {
         blink: { '0%,100%': { opacity: '1' }, '50%': { opacity: '0' } },
-        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } },
       },
     },
   },

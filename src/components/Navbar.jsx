@@ -36,11 +36,11 @@ export default function Navbar() {
       <div className="section-container flex items-center justify-between">
         <Link to="hero" smooth duration={600} className="cursor-pointer">
           <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-2">
-            <div className="w-9 h-9 border-2 border-accent rounded-lg flex items-center justify-center">
-              <span className="text-accent font-mono font-bold">P</span>
+            <div className="w-9 h-9 border-2 border-primary rounded-lg flex items-center justify-center">
+              <span className="text-primary font-mono font-bold">P</span>
             </div>
             <span className="text-tx font-mono text-sm hidden sm:block">
-              Patrick<span className="text-accent">.</span>dev
+              Patrick<span className="text-primary">.</span>dev
             </span>
           </motion.div>
         </Link>
@@ -56,7 +56,7 @@ export default function Navbar() {
           ))}
           <button
             onClick={() => setDark(!dark)}
-            className="p-2 rounded-lg border border-border text-tx-muted hover:text-accent hover:border-accent/40 transition-all duration-300"
+            className="p-2 rounded-lg border border-border text-tx-muted hover:text-primary hover:border-primary/40 transition-all duration-300"
             aria-label="Toggle theme"
           >
             {dark ? <FiSun size={15} /> : <FiMoon size={15} />}
@@ -64,7 +64,7 @@ export default function Navbar() {
           <a
             href="/Patrick_Ndaziramiye_CV.pdf"
             download
-            className="border border-accent text-accent font-mono text-xs lg:text-sm px-4 py-2 rounded-lg hover:bg-accent/10 transition-all duration-300"
+            className="border border-primary text-primary font-mono text-xs lg:text-sm px-4 py-2 rounded-lg hover:bg-primary/10 transition-all duration-300"
           >
             Resume
           </a>
@@ -75,7 +75,7 @@ export default function Navbar() {
           <button onClick={() => setDark(!dark)} className="p-2 rounded-lg border border-border text-tx-muted" aria-label="Toggle theme">
             {dark ? <FiSun size={15} /> : <FiMoon size={15} />}
           </button>
-          <button className="text-accent z-50 relative" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+          <button className="text-primary z-50 relative" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
             {menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
           </button>
         </div>
@@ -95,7 +95,7 @@ export default function Navbar() {
                 <Link
                   to={link.to} smooth duration={600} offset={-80}
                   onClick={() => setMenuOpen(false)}
-                  className="text-tx-muted font-mono text-xl hover:text-accent transition-colors cursor-pointer"
+                  className="text-tx-muted font-mono text-xl hover:text-primary transition-colors cursor-pointer"
                 >
                   {link.label}
                 </Link>
@@ -104,7 +104,7 @@ export default function Navbar() {
             <a
               href="/Patrick_Ndaziramiye_CV.pdf" download
               onClick={() => setMenuOpen(false)}
-              className="border border-accent text-accent font-mono text-lg px-6 py-3 rounded-lg hover:bg-accent/10 transition-all"
+              className="border border-primary text-primary font-mono text-lg px-6 py-3 rounded-lg hover:bg-primary/10 transition-all"
             >
               Resume
             </a>

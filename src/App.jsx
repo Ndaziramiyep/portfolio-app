@@ -13,7 +13,7 @@ export const ThemeContext = createContext()
 export const useTheme = () => useContext(ThemeContext)
 
 function App() {
-  const [dark, setDark] = useState(false)
+  const [dark, setDark] = useState(true)
 
   useEffect(() => {
     const saved = localStorage.getItem('theme')

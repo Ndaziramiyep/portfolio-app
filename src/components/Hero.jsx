@@ -40,7 +40,7 @@ export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="floating-shapes">
-        <div className="shape w-96 h-96 bg-accent" style={{ top: '10%', right: '10%', animationDelay: '0s' }} />
+        <div className="shape w-96 h-96 bg-primary" style={{ top: '10%', right: '10%', animationDelay: '0s' }} />
         <div className="shape w-64 h-64 bg-accent" style={{ bottom: '20%', left: '5%', animationDelay: '3s' }} />
       </div>
 
@@ -51,7 +51,7 @@ export default function Hero() {
       >
         {socialLinks.map(({ icon: Icon, href, label }) => (
           <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-            className="text-tx-faint hover:text-accent transition-all duration-300 hover:-translate-y-1">
+            className="text-tx-faint hover:text-primary transition-all duration-300 hover:-translate-y-1">
             <Icon size={20} />
           </a>
         ))}
@@ -64,7 +64,7 @@ export default function Hero() {
         className="hidden lg:flex fixed right-8 bottom-0 flex-col items-center gap-5 z-40"
       >
         <a href="mailto:ndaziramiye_222004090@stud.ur.ac.rw"
-          className="text-tx-faint hover:text-accent transition-all duration-300 hover:-translate-y-1 font-mono text-xs tracking-widest"
+          className="text-tx-faint hover:text-primary transition-all duration-300 hover:-translate-y-1 font-mono text-xs tracking-widest"
           style={{ writingMode: 'vertical-rl' }}>
           ndaziramiye_222004090@stud.ur.ac.rw
         </a>
@@ -74,7 +74,7 @@ export default function Hero() {
       <div className="section-container relative z-10 pt-20">
         <div className="max-w-4xl">
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-            className="text-accent font-mono text-base mb-5">
+            className="text-primary font-mono text-base mb-5">
             Hi, my name is
           </motion.p>
 
@@ -90,7 +90,7 @@ export default function Hero() {
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
             className="text-tx-muted text-base sm:text-lg max-w-2xl mb-10 leading-relaxed">
-            I'm a passionate <span className="text-accent font-semibold">Full Stack & Mobile App Developer</span> based in Rwanda,
+            I'm a passionate <span className="text-primary font-semibold">Full Stack & Mobile App Developer</span> based in Rwanda,
             specializing in building exceptional digital experiences — from blazing-fast web apps to polished cross-platform mobile apps.
           </motion.p>
 
@@ -98,13 +98,13 @@ export default function Hero() {
             className="flex flex-wrap gap-4">
             <Link to="projects" smooth duration={600} offset={-80}>
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                className="bg-accent text-white font-bold font-mono px-8 py-4 rounded-lg hover:bg-accent-hover transition-all duration-300 text-sm cursor-pointer">
+                className="bg-primary text-white font-bold font-mono px-8 py-4 rounded-lg hover:bg-primary-hover transition-all duration-300 text-sm cursor-pointer">
                 View My Work
               </motion.button>
             </Link>
             <Link to="contact" smooth duration={600} offset={-80}>
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                className="border border-accent text-accent font-mono px-8 py-4 rounded-lg hover:bg-accent/10 transition-all duration-300 text-sm cursor-pointer">
+                className="border border-primary text-primary font-mono px-8 py-4 rounded-lg hover:bg-primary/10 transition-all duration-300 text-sm cursor-pointer">
                 Get In Touch
               </motion.button>
             </Link>
@@ -114,7 +114,7 @@ export default function Hero() {
             className="flex flex-wrap gap-6 sm:gap-10 mt-12 sm:mt-16">
             {[{ number: '3+', label: 'Years Experience' }, { number: '25+', label: 'Projects Built' }, { number: '10+', label: 'Happy Clients' }, { number: '5+', label: 'Tech Stacks' }].map(({ number, label }) => (
               <div key={label} className="text-center">
-                <div className="text-3xl font-bold text-accent font-mono">{number}</div>
+                <div className="text-3xl font-bold text-primary font-mono">{number}</div>
                 <div className="text-tx-faint text-sm mt-1">{label}</div>
               </div>
             ))}
@@ -125,7 +125,7 @@ export default function Hero() {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
         <span className="text-tx-faint font-mono text-xs">scroll down</span>
-        <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} className="text-accent">
+        <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} className="text-primary">
           <FiArrowDown size={20} />
         </motion.div>
       </motion.div>

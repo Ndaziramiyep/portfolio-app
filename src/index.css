@@ -4,27 +4,36 @@
 
 @layer base {
   :root {
-    --bg: #ffffff;
-    --bg-card: #f9f9fb;
-    --bg-subtle: #f3f2f8;
-    --border: #e4e2ee;
-    --tx: #111018;
-    --tx-muted: #4a4760;
-    --tx-faint: #9896b0;
+    --bg: #0F172A;
+    --bg-card: #1E293B;
+    --bg-subtle: #162032;
+    --border: #2D3F55;
+    --tx: #F8FAFC;
+    --tx-muted: #94A3B8;
+    --tx-faint: #334155;
   }
 
   .dark {
-    --bg: #0f0e17;
-    --bg-card: #16152a;
-    --bg-subtle: #1e1c35;
-    --border: #2a2845;
-    --tx: #eeedf5;
-    --tx-muted: #9896b0;
-    --tx-faint: #5c5a78;
+    --bg: #0F172A;
+    --bg-card: #1E293B;
+    --bg-subtle: #162032;
+    --border: #2D3F55;
+    --tx: #F8FAFC;
+    --tx-muted: #94A3B8;
+    --tx-faint: #334155;
+  }
+
+  :not(.dark) {
+    --bg: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-subtle: #F1F5F9;
+    --border: #E2E8F0;
+    --tx: #0F172A;
+    --tx-muted: #475569;
+    --tx-faint: #94A3B8;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
   body {
@@ -39,9 +48,9 @@
 
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: #7c3aed44; border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: #7c3aed88; }
-  ::selection { background: #7c3aed22; color: #7c3aed; }
+  ::-webkit-scrollbar-thumb { background: #3B82F644; border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3B82F688; }
+  ::selection { background: #3B82F622; color: #3B82F6; }
 }
 
 @layer utilities {
@@ -65,10 +74,10 @@
     position: absolute;
     bottom: -4px; left: 0;
     width: 0; height: 2px;
-    background: #7c3aed;
+    background: #3B82F6;
     transition: width 0.3s ease;
   }
-  .nav-link:hover { color: #7c3aed; }
+  .nav-link:hover { color: #3B82F6; }
   .nav-link:hover::after { width: 100%; }
 
   .card {
@@ -78,8 +87,8 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
   .card:hover {
-    border-color: #7c3aed44;
-    box-shadow: 0 4px 24px rgba(124, 58, 237, 0.08);
+    border-color: #3B82F644;
+    box-shadow: 0 4px 24px rgba(59, 130, 246, 0.08);
   }
 
   .skill-bar { position: relative; overflow: hidden; }
@@ -88,7 +97,7 @@
     position: absolute;
     top: 0; left: -100%;
     width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(124,58,237,0.15), transparent);
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.2), transparent);
     animation: shimmer 2s infinite;
   }
   @keyframes shimmer { 100% { left: 100%; } }
