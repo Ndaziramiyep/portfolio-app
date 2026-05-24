@@ -50,17 +50,21 @@
   .nav-link:hover::after { width: 100%; }
 
   .card {
-    background-color: #0A0A0A;
-    border: 1px solid #737373;
+    background-color: rgba(250,250,250,0.03);
+    border: 1px solid rgba(212,175,55,0.2);
     border-radius: 1rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+    backdrop-filter: blur(4px);
   }
   .card:hover {
     border-color: #D4AF37;
-    box-shadow: 0 4px 24px rgba(212, 175, 55, 0.12);
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.1);
   }
 
-  .skill-bar { position: relative; overflow: hidden; }
+  .section-alt {
+    background: rgba(250,250,250,0.02);
+    backdrop-filter: blur(2px);
+  }
   .skill-bar::after {
     content: '';
     position: absolute;

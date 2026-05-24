@@ -51,7 +51,8 @@ export default function Hero() {
       >
         {socialLinks.map(({ icon: Icon, href, label }) => (
           <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
-            className="text-tx-faint hover:text-primary transition-all duration-300 hover:-translate-y-1">
+            className="text-tx-faint hover:text-primary transition-all duration-300 hover:-translate-y-1"
+            style={{ color: '#737373' }}>
             <Icon size={20} />
           </a>
         ))}
@@ -65,7 +66,7 @@ export default function Hero() {
       >
         <a href="mailto:ndaziramiye_222004090@stud.ur.ac.rw"
           className="text-tx-faint hover:text-primary transition-all duration-300 hover:-translate-y-1 font-mono text-xs tracking-widest"
-          style={{ writingMode: 'vertical-rl' }}>
+          style={{ writingMode: 'vertical-rl', color: '#737373' }}>
           ndaziramiye_222004090@stud.ur.ac.rw
         </a>
         <div className="w-px h-24 bg-border mt-2" />
@@ -84,13 +85,13 @@ export default function Hero() {
           </motion.h1>
 
           <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
-            className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-tx-muted mb-6 leading-tight">
-            I build <Typewriter words={roles} />
+            className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 leading-tight" style={{ color: '#737373' }}>
+            I build{' '}<Typewriter words={roles} />
           </motion.h2>
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}
             className="text-tx-muted text-base sm:text-lg max-w-2xl mb-10 leading-relaxed">
-            I'm a passionate <span className="text-primary font-semibold">Full Stack & Mobile App Developer</span> based in Rwanda,
+            I'm a passionate <span className="font-semibold" style={{ color: '#D4AF37' }}>Full Stack & Mobile App Developer</span> based in Rwanda,
             specializing in building exceptional digital experiences — from blazing-fast web apps to polished cross-platform mobile apps.
           </motion.p>
 
@@ -98,13 +99,15 @@ export default function Hero() {
             className="flex flex-wrap gap-4">
             <Link to="projects" smooth duration={600} offset={-80}>
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                className="bg-primary text-white font-bold font-mono px-8 py-4 rounded-lg hover:bg-primary-hover transition-all duration-300 text-sm cursor-pointer">
+                className="font-bold font-mono px-8 py-4 rounded-lg transition-all duration-300 text-sm cursor-pointer"
+                style={{ backgroundColor: '#D4AF37', color: '#0A0A0A' }}>
                 View My Work
               </motion.button>
             </Link>
             <Link to="contact" smooth duration={600} offset={-80}>
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                className="border border-primary text-primary font-mono px-8 py-4 rounded-lg hover:bg-primary/10 transition-all duration-300 text-sm cursor-pointer">
+                className="font-mono px-8 py-4 rounded-lg transition-all duration-300 text-sm cursor-pointer"
+                style={{ border: '1px solid #D4AF37', color: '#D4AF37' }}>
                 Get In Touch
               </motion.button>
             </Link>
@@ -114,8 +117,8 @@ export default function Hero() {
             className="flex flex-wrap gap-6 sm:gap-10 mt-12 sm:mt-16">
             {[{ number: '3+', label: 'Years Experience' }, { number: '25+', label: 'Projects Built' }, { number: '10+', label: 'Happy Clients' }, { number: '5+', label: 'Tech Stacks' }].map(({ number, label }) => (
               <div key={label} className="text-center">
-                <div className="text-3xl font-bold text-primary font-mono">{number}</div>
-                <div className="text-tx-faint text-sm mt-1">{label}</div>
+                <div className="text-3xl font-bold font-mono" style={{ color: '#D4AF37' }}>{number}</div>
+                <div className="text-sm mt-1" style={{ color: '#737373' }}>{label}</div>
               </div>
             ))}
           </motion.div>
