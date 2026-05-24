@@ -51,14 +51,12 @@
 
   .card {
     background-color: rgba(250,250,250,0.03);
-    border: 1px solid rgba(212,175,55,0.2);
+    border: 1px solid rgba(255,255,255,0.08);
     border-radius: 1rem;
-    transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
-    backdrop-filter: blur(4px);
+    transition: border-color 0.3s ease;
   }
   .card:hover {
-    border-color: #D4AF37;
-    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.1);
+    border-color: rgba(255,255,255,0.15);
   }
 
   .section-alt {

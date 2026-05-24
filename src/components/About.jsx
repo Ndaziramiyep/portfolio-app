@@ -57,15 +57,12 @@ export default function About() {
             <div className="relative mb-8">
               <div className="relative mx-auto w-56 h-56">
                 <div className="absolute inset-0 rounded-2xl translate-x-4 translate-y-4" style={{ border: '2px solid #D4AF37' }} />
-                <div className="card relative w-full h-full rounded-2xl flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-24 h-24 rounded-full mx-auto mb-3 flex items-center justify-center"
-                      style={{ background: 'rgba(212,175,55,0.1)', border: '2px solid #D4AF37' }}>
-                      <span className="font-bold text-4xl font-mono" style={{ color: '#D4AF37' }}>P</span>
-                    </div>
-                    <p className="font-semibold" style={{ color: '#FAFAFA' }}>Patrick Ndaziramiye</p>
-                    <p className="font-mono text-xs mt-1" style={{ color: '#D4AF37' }}>Full Stack & Mobile Dev</p>
-                  </div>
+                <div className="card relative w-full h-full rounded-2xl overflow-hidden">
+                  <img
+                    src="/img1.png"
+                    alt="Patrick Ndaziramiye"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>

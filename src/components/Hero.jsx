@@ -39,10 +39,11 @@ function Typewriter({ words }) {
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="floating-shapes">
-        <div className="shape w-96 h-96 bg-primary" style={{ top: '10%', right: '10%', animationDelay: '0s' }} />
-        <div className="shape w-64 h-64 bg-accent" style={{ bottom: '20%', left: '5%', animationDelay: '3s' }} />
-      </div>
+      {/* subtle background grid */}
+      <div className="absolute inset-0 opacity-5" style={{
+        backgroundImage: 'linear-gradient(rgba(212,175,55,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.3) 1px, transparent 1px)',
+        backgroundSize: '80px 80px'
+      }} />
 
       {/* Social sidebar */}
       <motion.div
