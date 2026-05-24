@@ -23,7 +23,7 @@
     --tx-faint: #334155;
   }
 
-  :not(.dark) {
+  html:not(.dark) {
     --bg: #F8FAFC;
     --bg-card: #FFFFFF;
     --bg-subtle: #F1F5F9;

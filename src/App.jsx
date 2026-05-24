@@ -12,13 +12,13 @@ import Footer from './components/Footer'
 export const ThemeContext = createContext()
 export const useTheme = () => useContext(ThemeContext)
 
-function App() {
-  const [dark, setDark] = useState(true)
+const getInitialDark = () => {
+  const saved = localStorage.getItem('theme')
+  return saved ? saved === 'dark' : true
+}
 
-  useEffect(() => {
-    const saved = localStorage.getItem('theme')
-    setDark(saved === 'dark')
-  }, [])
+function App() {
+  const [dark, setDark] = useState(getInitialDark)
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', dark)
