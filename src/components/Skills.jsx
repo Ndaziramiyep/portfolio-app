@@ -9,17 +9,15 @@ import {
   SiFigma, SiPostman, SiVite, SiTrello,
 } from 'react-icons/si'
 import { FiMonitor, FiServer, FiSmartphone, FiDatabase, FiSettings, FiTool, FiCloud } from 'react-icons/fi'
+import { useTheme } from '../App'
 
 const skillCategories = [
   {
-    title: 'Frontend',
-    icon: FiMonitor,
-    color: 'from-blue-500/20 to-cyan-500/20',
-    border: 'border-blue-500/30',
-    iconColor: 'text-blue-400',
+    title: 'Frontend', icon: FiMonitor,
+    color: 'from-violet-500/10 to-indigo-500/10', border: 'border-violet-500/30', iconColor: 'text-violet-400',
     skills: [
       { name: 'React.js', icon: SiReact, level: 95, color: '#61DAFB' },
-      { name: 'Next.js', icon: SiNextdotjs, level: 88, color: '#ffffff' },
+      { name: 'Next.js', icon: SiNextdotjs, level: 88, color: '#a78bfa' },
       { name: 'TypeScript', icon: SiTypescript, level: 85, color: '#3178C6' },
       { name: 'JavaScript', icon: SiJavascript, level: 95, color: '#F7DF1E' },
       { name: 'Tailwind CSS', icon: SiTailwindcss, level: 92, color: '#38BDF8' },
@@ -27,14 +25,11 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Backend',
-    icon: FiServer,
-    color: 'from-green-500/20 to-emerald-500/20',
-    border: 'border-green-500/30',
-    iconColor: 'text-green-400',
+    title: 'Backend', icon: FiServer,
+    color: 'from-indigo-500/10 to-blue-500/10', border: 'border-indigo-500/30', iconColor: 'text-indigo-400',
     skills: [
       { name: 'Node.js', icon: SiNodedotjs, level: 90, color: '#68A063' },
-      { name: 'Express.js', icon: SiExpress, level: 88, color: '#ffffff' },
+      { name: 'Express.js', icon: SiExpress, level: 88, color: '#a78bfa' },
       { name: 'Python', icon: SiPython, level: 85, color: '#3776AB' },
       { name: 'Django', icon: SiDjango, level: 80, color: '#0C4B33' },
       { name: 'GraphQL', icon: SiGraphql, level: 75, color: '#E10098' },
@@ -42,24 +37,18 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Mobile',
-    icon: FiSmartphone,
-    color: 'from-purple-500/20 to-pink-500/20',
-    border: 'border-purple-500/30',
-    iconColor: 'text-purple-400',
+    title: 'Mobile', icon: FiSmartphone,
+    color: 'from-purple-500/10 to-violet-500/10', border: 'border-purple-500/30', iconColor: 'text-purple-400',
     skills: [
       { name: 'React Native', icon: SiReact, level: 90, color: '#61DAFB' },
       { name: 'Flutter', icon: SiFlutter, level: 85, color: '#54C5F8' },
       { name: 'Dart', icon: SiDart, level: 82, color: '#0175C2' },
-      { name: 'Expo', icon: SiExpo, level: 88, color: '#ffffff' },
+      { name: 'Expo', icon: SiExpo, level: 88, color: '#a78bfa' },
     ],
   },
   {
-    title: 'Databases',
-    icon: FiDatabase,
-    color: 'from-yellow-500/20 to-orange-500/20',
-    border: 'border-yellow-500/30',
-    iconColor: 'text-yellow-400',
+    title: 'Databases', icon: FiDatabase,
+    color: 'from-fuchsia-500/10 to-purple-500/10', border: 'border-fuchsia-500/30', iconColor: 'text-fuchsia-400',
     skills: [
       { name: 'MongoDB', icon: SiMongodb, level: 88, color: '#4DB33D' },
       { name: 'PostgreSQL', icon: SiPostgresql, level: 85, color: '#316192' },
@@ -70,26 +59,20 @@ const skillCategories = [
     ],
   },
   {
-    title: 'DevOps & Cloud',
-    icon: FiSettings,
-    color: 'from-red-500/20 to-orange-500/20',
-    border: 'border-red-500/30',
-    iconColor: 'text-red-400',
+    title: 'DevOps & Cloud', icon: FiSettings,
+    color: 'from-blue-500/10 to-indigo-500/10', border: 'border-blue-500/30', iconColor: 'text-blue-400',
     skills: [
       { name: 'Docker', icon: SiDocker, level: 80, color: '#2496ED' },
       { name: 'Git', icon: SiGit, level: 95, color: '#F05032' },
-      { name: 'GitHub', icon: SiGithub, level: 95, color: '#ffffff' },
+      { name: 'GitHub', icon: SiGithub, level: 95, color: '#a78bfa' },
       { name: 'AWS', icon: FiCloud, level: 72, color: '#FF9900' },
-      { name: 'Vercel', icon: SiVercel, level: 90, color: '#ffffff' },
+      { name: 'Vercel', icon: SiVercel, level: 90, color: '#a78bfa' },
       { name: 'Linux', icon: SiLinux, level: 80, color: '#FCC624' },
     ],
   },
   {
-    title: 'Tools & Design',
-    icon: FiTool,
-    color: 'from-cyan-500/20 to-teal-500/20',
-    border: 'border-cyan-500/30',
-    iconColor: 'text-cyan-400',
+    title: 'Tools & Design', icon: FiTool,
+    color: 'from-violet-500/10 to-purple-500/10', border: 'border-violet-500/30', iconColor: 'text-violet-400',
     skills: [
       { name: 'Figma', icon: SiFigma, level: 80, color: '#F24E1E' },
       { name: 'Postman', icon: SiPostman, level: 90, color: '#FF6C37' },
@@ -102,25 +85,24 @@ const skillCategories = [
 function SkillBar({ name, icon: Icon, level, color, delay }) {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true })
+  const { dark } = useTheme()
 
   return (
     <div ref={ref} className="group">
       <div className="flex items-center justify-between mb-1.5">
         <div className="flex items-center gap-2">
           <Icon style={{ color }} size={14} />
-          <span className="text-slate-mid text-sm group-hover:text-slate-light transition-colors">
-            {name}
-          </span>
+          <span className={`text-sm group-hover:text-accent transition-colors ${dark ? 'text-slate-mid' : 'text-ink-mid'}`}>{name}</span>
         </div>
-        <span className="text-mint font-mono text-xs">{level}%</span>
+        <span className="text-accent font-mono text-xs">{level}%</span>
       </div>
-      <div className="h-1.5 bg-navy-lighter rounded-full overflow-hidden">
+      <div className={`h-1.5 rounded-full overflow-hidden ${dark ? 'bg-navy-lighter' : 'bg-light-border'}`}>
         <motion.div
           initial={{ width: 0 }}
           animate={inView ? { width: `${level}%` } : {}}
           transition={{ duration: 1, delay: delay * 0.1, ease: 'easeOut' }}
           className="h-full rounded-full skill-bar"
-          style={{ background: `linear-gradient(90deg, ${color}99, ${color})` }}
+          style={{ background: `linear-gradient(90deg, #7c3aed99, #a78bfa)` }}
         />
       </div>
     </div>
@@ -130,9 +112,10 @@ function SkillBar({ name, icon: Icon, level, color, delay }) {
 export default function Skills() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
+  const { dark } = useTheme()
 
   return (
-    <section id="skills" className="py-16 sm:py-24 bg-navy-light/30">
+    <section id="skills" className={`py-16 sm:py-24 ${dark ? 'bg-navy-light/30' : 'bg-violet-50/50'}`}>
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -140,9 +123,9 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-4 mb-10 sm:mb-16"
         >
-          <span className="text-mint font-mono text-lg">02.</span>
-          <h2 className="text-3xl font-bold text-slate-light">Skills & Technologies</h2>
-          <div className="flex-1 h-px bg-navy-lighter max-w-xs" />
+          <span className="text-accent font-mono text-lg">02.</span>
+          <h2 className={`text-3xl font-bold ${dark ? 'text-slate-light' : 'text-ink'}`}>Skills & Technologies</h2>
+          <div className={`flex-1 h-px max-w-xs ${dark ? 'bg-navy-lighter' : 'bg-light-border'}`} />
         </motion.div>
 
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -153,13 +136,13 @@ export default function Skills() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: catIdx * 0.1, duration: 0.6 }}
               whileHover={{ y: -4 }}
-              className={`bg-gradient-to-br ${color} rounded-2xl p-6 border ${border} backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:shadow-mint/5`}
+              className={`bg-gradient-to-br ${color} rounded-2xl p-6 border ${border} backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:shadow-accent/5 ${dark ? '' : 'bg-white/80'}`}
             >
               <div className="flex items-center gap-3 mb-5">
-                <div className={`${iconColor} p-2 rounded-lg bg-navy/50`}>
+                <div className={`${iconColor} p-2 rounded-lg ${dark ? 'bg-navy/50' : 'bg-white/70'}`}>
                   <CatIcon size={18} />
                 </div>
-                <h3 className="text-slate-light font-semibold">{title}</h3>
+                <h3 className={`font-semibold ${dark ? 'text-slate-light' : 'text-ink'}`}>{title}</h3>
               </div>
               <div className="space-y-4">
                 {skills.map((skill, i) => (

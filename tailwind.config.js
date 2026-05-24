@@ -1,22 +1,37 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
+        // Dark mode
         navy: {
-          DEFAULT: '#0f0f23',
-          light: '#112240',
-          lighter: '#1d3557',
+          DEFAULT: '#0f0e17',
+          light: '#1a1830',
+          lighter: '#2d2b55',
         },
-        mint: {
-          DEFAULT: '#64ffda',
-          dim: '#64ffdaaa',
+        // Light mode
+        light: {
+          DEFAULT: '#f8f7ff',
+          card: '#ffffff',
+          border: '#e2e0f0',
+        },
+        accent: {
+          DEFAULT: '#7c3aed',
+          light: '#a78bfa',
+          dim: '#7c3aed99',
         },
         slate: {
-          light: '#e6f1ff',
-          mid: '#ccd6f6',
-          muted: '#8892b0',
+          light: '#e8e6f0',
+          mid: '#c4c0d8',
+          muted: '#8b87a8',
+        },
+        // Light mode text
+        ink: {
+          DEFAULT: '#0f0e17',
+          mid: '#3d3a5c',
+          muted: '#6b6888',
         },
       },
       fontFamily: {
@@ -48,8 +63,8 @@ export default {
           '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 5px #64ffda44' },
-          '100%': { boxShadow: '0 0 20px #64ffda88, 0 0 40px #64ffda44' },
+          '0%': { boxShadow: '0 0 5px #7c3aed44' },
+          '100%': { boxShadow: '0 0 20px #7c3aed88, 0 0 40px #7c3aed44' },
         },
       },
     },

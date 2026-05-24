@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-scroll'
 import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiArrowDown } from 'react-icons/fi'
+import { useTheme } from '../App'
 
 const roles = [
   'Full Stack Developer',
@@ -26,7 +27,6 @@ function Typewriter({ words }) {
   useEffect(() => {
     const word = words[currentWord]
     const speed = isDeleting ? 60 : 100
-
     const timer = setTimeout(() => {
       if (!isDeleting && currentText === word) {
         setTimeout(() => setIsDeleting(true), 1500)
@@ -41,46 +41,34 @@ function Typewriter({ words }) {
         isDeleting ? prev.slice(0, -1) : word.slice(0, prev.length + 1)
       )
     }, speed)
-
     return () => clearTimeout(timer)
   }, [currentText, isDeleting, currentWord, words])
 
   return (
-    <span className="text-mint">
+    <span className="text-accent">
       {currentText}
-      <span className="animate-blink border-r-2 border-mint ml-0.5">&nbsp;</span>
+      <span className="animate-blink border-r-2 border-accent ml-0.5">&nbsp;</span>
     </span>
   )
 }
 
 export default function Hero() {
+  const { dark } = useTheme()
+
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Animated background shapes */}
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background shapes */}
       <div className="floating-shapes">
-        <div
-          className="shape w-96 h-96 bg-mint/20"
-          style={{ top: '10%', right: '10%', animationDelay: '0s' }}
-        />
-        <div
-          className="shape w-64 h-64 bg-blue-500/20"
-          style={{ bottom: '20%', left: '5%', animationDelay: '3s' }}
-        />
-        <div
-          className="shape w-48 h-48 bg-purple-500/20"
-          style={{ top: '50%', left: '50%', animationDelay: '1.5s' }}
-        />
+        <div className="shape w-96 h-96 bg-accent/20" style={{ top: '10%', right: '10%', animationDelay: '0s' }} />
+        <div className="shape w-64 h-64 bg-violet-500/20" style={{ bottom: '20%', left: '5%', animationDelay: '3s' }} />
+        <div className="shape w-48 h-48 bg-indigo-500/20" style={{ top: '50%', left: '50%', animationDelay: '1.5s' }} />
       </div>
 
       {/* Grid overlay */}
       <div
         className="absolute inset-0 opacity-5"
         style={{
-          backgroundImage:
-            'linear-gradient(#64ffda 1px, transparent 1px), linear-gradient(90deg, #64ffda 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(#7c3aed 1px, transparent 1px), linear-gradient(90deg, #7c3aed 1px, transparent 1px)',
           backgroundSize: '60px 60px',
         }}
       />
@@ -99,12 +87,12 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={label}
-            className="text-slate-muted hover:text-mint transition-all duration-300 hover:-translate-y-1"
+            className={`transition-all duration-300 hover:-translate-y-1 hover:text-accent ${dark ? 'text-slate-muted' : 'text-ink-muted'}`}
           >
             <Icon size={20} />
           </a>
         ))}
-        <div className="w-px h-24 bg-slate-muted/50 mt-2" />
+        <div className={`w-px h-24 mt-2 ${dark ? 'bg-slate-muted/50' : 'bg-ink-muted/30'}`} />
       </motion.div>
 
       {/* Email sidebar */}
@@ -116,12 +104,12 @@ export default function Hero() {
       >
         <a
           href="mailto:ndaziramiye_222004090@stud.ur.ac.rw"
-          className="text-slate-muted hover:text-mint transition-all duration-300 hover:-translate-y-1 font-mono text-xs tracking-widest"
+          className={`transition-all duration-300 hover:-translate-y-1 hover:text-accent font-mono text-xs tracking-widest ${dark ? 'text-slate-muted' : 'text-ink-muted'}`}
           style={{ writingMode: 'vertical-rl' }}
         >
           ndaziramiye_222004090@stud.ur.ac.rw
         </a>
-        <div className="w-px h-24 bg-slate-muted/50 mt-2" />
+        <div className={`w-px h-24 mt-2 ${dark ? 'bg-slate-muted/50' : 'bg-ink-muted/30'}`} />
       </motion.div>
 
       {/* Main content */}
@@ -131,7 +119,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-mint font-mono text-base mb-5"
+            className="text-accent font-mono text-base mb-5"
           >
             Hi, my name is
           </motion.p>
@@ -140,7 +128,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-light mb-3 leading-tight"
+            className={`text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-3 leading-tight ${dark ? 'text-slate-light' : 'text-ink'}`}
           >
             Patrick Ndaziramiye
           </motion.h1>
@@ -149,22 +137,21 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-muted mb-6 leading-tight"
+            className={`text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 leading-tight ${dark ? 'text-slate-muted' : 'text-ink-mid'}`}
           >
-            I build{' '}
-            <Typewriter words={roles} />
+            I build <Typewriter words={roles} />
           </motion.h2>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-slate-muted text-base sm:text-lg max-w-2xl mb-10 leading-relaxed"
+            className={`text-base sm:text-lg max-w-2xl mb-10 leading-relaxed ${dark ? 'text-slate-muted' : 'text-ink-muted'}`}
           >
             I'm a passionate{' '}
-            <span className="text-mint">Full Stack & Mobile App Developer</span> based in Rwanda,
+            <span className="text-accent font-semibold">Full Stack & Mobile App Developer</span> based in Rwanda,
             specializing in building exceptional digital experiences — from blazing-fast web apps to
-            polished cross-platform mobile apps. I turn ideas into production-ready products.
+            polished cross-platform mobile apps.
           </motion.p>
 
           <motion.div
@@ -175,9 +162,9 @@ export default function Hero() {
           >
             <Link to="projects" smooth duration={600} offset={-80}>
               <motion.button
-                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(100,255,218,0.3)' }}
+                whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(124,58,237,0.4)' }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-mint text-navy font-bold font-mono px-8 py-4 rounded hover:bg-mint/90 transition-all duration-300 text-sm cursor-pointer"
+                className="bg-accent text-white font-bold font-mono px-8 py-4 rounded hover:bg-accent/90 transition-all duration-300 text-sm cursor-pointer"
               >
                 View My Work
               </motion.button>
@@ -186,7 +173,7 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border border-mint text-mint font-mono px-8 py-4 rounded hover:bg-mint/10 transition-all duration-300 text-sm cursor-pointer"
+                className="border border-accent text-accent font-mono px-8 py-4 rounded hover:bg-accent/10 transition-all duration-300 text-sm cursor-pointer"
               >
                 Get In Touch
               </motion.button>
@@ -207,8 +194,8 @@ export default function Hero() {
               { number: '5+', label: 'Tech Stacks' },
             ].map(({ number, label }) => (
               <div key={label} className="text-center">
-                <div className="text-3xl font-bold text-mint font-mono">{number}</div>
-                <div className="text-slate-muted text-sm mt-1">{label}</div>
+                <div className="text-3xl font-bold text-accent font-mono">{number}</div>
+                <div className={`text-sm mt-1 ${dark ? 'text-slate-muted' : 'text-ink-muted'}`}>{label}</div>
               </div>
             ))}
           </motion.div>
@@ -222,12 +209,8 @@ export default function Hero() {
         transition={{ delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-slate-muted font-mono text-xs">scroll down</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="text-mint"
-        >
+        <span className={`font-mono text-xs ${dark ? 'text-slate-muted' : 'text-ink-muted'}`}>scroll down</span>
+        <motion.div animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} className="text-accent">
           <FiArrowDown size={20} />
         </motion.div>
       </motion.div>
