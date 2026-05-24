@@ -1,4 +1,3 @@
-import { useState, useEffect, createContext, useContext } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -9,38 +8,21 @@ import Education from './components/Education'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
-export const ThemeContext = createContext()
-export const useTheme = () => useContext(ThemeContext)
-
-const getInitialDark = () => {
-  const saved = localStorage.getItem('theme')
-  return saved ? saved === 'dark' : true
-}
-
 function App() {
-  const [dark, setDark] = useState(getInitialDark)
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', dark)
-    localStorage.setItem('theme', dark ? 'dark' : 'light')
-  }, [dark])
-
   return (
-    <ThemeContext.Provider value={{ dark, setDark }}>
-      <div className="min-h-screen bg-bg text-tx transition-colors duration-300">
-        <Navbar />
-        <main>
-          <Hero />
-          <About />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Education />
-          <Contact />
-        </main>
-        <Footer />
-      </div>
-    </ThemeContext.Provider>
+    <div className="min-h-screen" style={{ backgroundColor: '#0F172A', color: '#F8FAFC' }}>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Education />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   )
 }
 

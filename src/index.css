@@ -3,51 +3,20 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --bg: #0F172A;
-    --bg-card: #1E293B;
-    --bg-subtle: #162032;
-    --border: #2D3F55;
-    --tx: #F8FAFC;
-    --tx-muted: #94A3B8;
-    --tx-faint: #334155;
-  }
-
-  .dark {
-    --bg: #0F172A;
-    --bg-card: #1E293B;
-    --bg-subtle: #162032;
-    --border: #2D3F55;
-    --tx: #F8FAFC;
-    --tx-muted: #94A3B8;
-    --tx-faint: #334155;
-  }
-
-  html:not(.dark) {
-    --bg: #F8FAFC;
-    --bg-card: #FFFFFF;
-    --bg-subtle: #F1F5F9;
-    --border: #E2E8F0;
-    --tx: #0F172A;
-    --tx-muted: #475569;
-    --tx-faint: #94A3B8;
-  }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
   body {
-    background-color: var(--bg);
-    color: var(--tx);
+    background-color: #0F172A;
+    color: #F8FAFC;
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-track { background: #0F172A; }
   ::-webkit-scrollbar-thumb { background: #3B82F644; border-radius: 4px; }
   ::-webkit-scrollbar-thumb:hover { background: #3B82F688; }
   ::selection { background: #3B82F622; color: #3B82F6; }
@@ -64,7 +33,7 @@
 
   .nav-link {
     position: relative;
-    color: var(--tx-muted);
+    color: #94A3B8;
     transition: color 0.3s ease;
     font-family: 'Fira Code', monospace;
     font-size: 0.85rem;
@@ -81,8 +50,8 @@
   .nav-link:hover::after { width: 100%; }
 
   .card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border);
+    background-color: #1E293B;
+    border: 1px solid #2D3F55;
     border-radius: 1rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
@@ -114,4 +83,7 @@
     0%,100% { transform: translateY(0) scale(1); }
     50% { transform: translateY(-30px) scale(1.05); }
   }
+
+  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+  .animate-blink { animation: blink 1s step-end infinite; }
 }
