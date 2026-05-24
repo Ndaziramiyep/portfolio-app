@@ -5,13 +5,14 @@ export default {
     extend: {
       colors: {
         bg: {
-          DEFAULT: '#0F172A',
-          card: '#1E293B',
-          subtle: '#162032',
+          DEFAULT: '#0A0A0A',
+          card: '#141414',
+          subtle: '#111111',
         },
-        primary: '#3B82F6',
-        accent: '#8B5CF6',
-        secondary: '#94A3B8',
+        primary: '#D4AF37',
+        accent: '#FACC15',
+        secondary: '#737373',
+        tx: '#FAFAFA',
       },
       fontFamily: {
         mono: ['Fira Code', 'Fira Mono', 'monospace'],
