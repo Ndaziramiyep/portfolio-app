@@ -13,32 +13,21 @@ export const ThemeContext = createContext()
 export const useTheme = () => useContext(ThemeContext)
 
 function App() {
-  const [dark, setDark] = useState(true)
+  const [dark, setDark] = useState(false)
 
   useEffect(() => {
     const saved = localStorage.getItem('theme')
-    if (saved) setDark(saved === 'dark')
+    setDark(saved === 'dark')
   }, [])
 
   useEffect(() => {
-    const root = document.documentElement
-    if (dark) {
-      root.classList.add('dark')
-      root.classList.remove('light')
-      document.body.style.backgroundColor = '#0f0e17'
-      document.body.style.color = '#e8e6f0'
-    } else {
-      root.classList.add('light')
-      root.classList.remove('dark')
-      document.body.style.backgroundColor = '#f8f7ff'
-      document.body.style.color = '#0f0e17'
-    }
+    document.documentElement.classList.toggle('dark', dark)
     localStorage.setItem('theme', dark ? 'dark' : 'light')
   }, [dark])
 
   return (
     <ThemeContext.Provider value={{ dark, setDark }}>
-      <div className={`min-h-screen transition-colors duration-300 ${dark ? 'bg-navy text-slate-light' : 'bg-light text-ink'}`}>
+      <div className="min-h-screen bg-bg text-tx transition-colors duration-300">
         <Navbar />
         <main>
           <Hero />

@@ -3,136 +3,106 @@
 @tailwind utilities;
 
 @layer base {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  :root {
+    --bg: #ffffff;
+    --bg-card: #f9f9fb;
+    --bg-subtle: #f3f2f8;
+    --border: #e4e2ee;
+    --tx: #111018;
+    --tx-muted: #4a4760;
+    --tx-faint: #9896b0;
   }
 
-  html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+  .dark {
+    --bg: #0f0e17;
+    --bg-card: #16152a;
+    --bg-subtle: #1e1c35;
+    --border: #2a2845;
+    --tx: #eeedf5;
+    --tx-muted: #9896b0;
+    --tx-faint: #5c5a78;
   }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
   body {
-    background-color: #0f0e17;
-    color: #e8e6f0;
+    background-color: var(--bg);
+    color: var(--tx);
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .light body, body.light {
-    background-color: #f8f7ff;
-    color: #0f0e17;
-  }
-
-  ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: #0f0e17; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: #7c3aed44; border-radius: 4px; }
   ::-webkit-scrollbar-thumb:hover { background: #7c3aed88; }
-
-  .light ::-webkit-scrollbar-track { background: #f8f7ff; }
-
-  ::selection { background: #7c3aed33; color: #a78bfa; }
+  ::selection { background: #7c3aed22; color: #7c3aed; }
 }
 
 @layer utilities {
-  .text-gradient {
-    background: linear-gradient(135deg, #7c3aed, #a78bfa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .glow-border {
-    border: 1px solid #7c3aed33;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .glow-border:hover {
-    border-color: #7c3aed88;
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
-  }
-
   .section-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
   }
-
-  @media (min-width: 640px) {
-    .section-container { padding: 0 1.5rem; }
-  }
-
-  @media (min-width: 1024px) {
-    .section-container { padding: 0 2rem; }
-  }
+  @media (min-width: 640px) { .section-container { padding: 0 1.5rem; } }
+  @media (min-width: 1024px) { .section-container { padding: 0 2rem; } }
 
   .nav-link {
     position: relative;
-    color: #8b87a8;
+    color: var(--tx-muted);
     transition: color 0.3s ease;
     font-family: 'Fira Code', monospace;
     font-size: 0.85rem;
   }
-
   .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
+    bottom: -4px; left: 0;
+    width: 0; height: 2px;
     background: #7c3aed;
     transition: width 0.3s ease;
   }
-
-  .nav-link:hover { color: #a78bfa; }
+  .nav-link:hover { color: #7c3aed; }
   .nav-link:hover::after { width: 100%; }
 
-  /* Light mode nav-link */
-  .light .nav-link { color: #6b6888; }
-  .light .nav-link:hover { color: #7c3aed; }
-
-  .skill-bar {
-    position: relative;
-    overflow: hidden;
+  .card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card:hover {
+    border-color: #7c3aed44;
+    box-shadow: 0 4px 24px rgba(124, 58, 237, 0.08);
   }
 
+  .skill-bar { position: relative; overflow: hidden; }
   .skill-bar::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.2), transparent);
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(124,58,237,0.15), transparent);
     animation: shimmer 2s infinite;
   }
-
   @keyframes shimmer { 100% { left: 100%; } }
 
-  .floating-shapes {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-  }
-
+  .floating-shapes { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
   .shape {
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    opacity: 0.15;
-    animation: float 8s ease-in-out infinite;
+    opacity: 0.12;
+    animation: float-shape 8s ease-in-out infinite;
   }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0) scale(1); }
+  @keyframes float-shape {
+    0%,100% { transform: translateY(0) scale(1); }
     50% { transform: translateY(-30px) scale(1.05); }
   }
 }

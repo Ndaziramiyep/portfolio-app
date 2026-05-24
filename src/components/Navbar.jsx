@@ -19,9 +19,9 @@ export default function Navbar() {
   const { dark, setDark } = useTheme()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    const onScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
@@ -30,97 +30,57 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? dark
-            ? 'bg-navy/95 backdrop-blur-md shadow-lg shadow-black/20 py-3'
-            : 'bg-light/95 backdrop-blur-md shadow-lg shadow-black/10 py-3'
-          : 'bg-transparent py-5'
+        scrolled ? 'bg-bg/95 backdrop-blur-md shadow-sm border-b border-border py-3' : 'bg-transparent py-5'
       }`}
     >
       <div className="section-container flex items-center justify-between">
-        {/* Logo */}
         <Link to="hero" smooth duration={600} className="cursor-pointer">
           <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-2">
-            <div className="w-10 h-10 border-2 border-accent rounded flex items-center justify-center">
-              <span className="text-accent font-mono font-bold text-lg">P</span>
+            <div className="w-9 h-9 border-2 border-accent rounded-lg flex items-center justify-center">
+              <span className="text-accent font-mono font-bold">P</span>
             </div>
-            <span className={`font-mono text-sm hidden sm:block ${dark ? 'text-slate-light' : 'text-ink'}`}>
+            <span className="text-tx font-mono text-sm hidden sm:block">
               Patrick<span className="text-accent">.</span>dev
             </span>
           </motion.div>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-4 lg:gap-8">
+        <div className="hidden md:flex items-center gap-4 lg:gap-6">
           {navLinks.map((link, i) => (
-            <motion.div
-              key={link.to}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 * i + 0.3 }}
-            >
-              <Link
-                to={link.to}
-                smooth
-                duration={600}
-                offset={-80}
-                className="nav-link cursor-pointer text-xs lg:text-sm font-mono"
-              >
+            <motion.div key={link.to} initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 * i + 0.3 }}>
+              <Link to={link.to} smooth duration={600} offset={-80} className="nav-link cursor-pointer text-xs lg:text-sm">
                 {link.label}
               </Link>
             </motion.div>
           ))}
-
-          {/* Theme toggle */}
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
+          <button
             onClick={() => setDark(!dark)}
-            className={`p-2 rounded-lg border transition-all duration-300 ${
-              dark
-                ? 'border-navy-lighter text-slate-muted hover:text-accent hover:border-accent/50'
-                : 'border-light-border text-ink-muted hover:text-accent hover:border-accent/50'
-            }`}
+            className="p-2 rounded-lg border border-border text-tx-muted hover:text-accent hover:border-accent/40 transition-all duration-300"
             aria-label="Toggle theme"
           >
-            {dark ? <FiSun size={16} /> : <FiMoon size={16} />}
-          </motion.button>
-
-          <motion.a
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
+            {dark ? <FiSun size={15} /> : <FiMoon size={15} />}
+          </button>
+          <a
             href="/Patrick_Ndaziramiye_CV.pdf"
             download
-            className="border border-accent text-accent font-mono text-xs lg:text-sm px-3 lg:px-4 py-2 rounded hover:bg-accent/10 transition-all duration-300"
+            className="border border-accent text-accent font-mono text-xs lg:text-sm px-4 py-2 rounded-lg hover:bg-accent/10 transition-all duration-300"
           >
             Resume
-          </motion.a>
+          </a>
         </div>
 
-        {/* Mobile right side */}
-        <div className="flex items-center gap-3 md:hidden">
-          <button
-            onClick={() => setDark(!dark)}
-            className={`p-2 rounded-lg border transition-all duration-300 ${
-              dark ? 'border-navy-lighter text-slate-muted' : 'border-light-border text-ink-muted'
-            }`}
-            aria-label="Toggle theme"
-          >
-            {dark ? <FiSun size={16} /> : <FiMoon size={16} />}
+        {/* Mobile */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button onClick={() => setDark(!dark)} className="p-2 rounded-lg border border-border text-tx-muted" aria-label="Toggle theme">
+            {dark ? <FiSun size={15} /> : <FiMoon size={15} />}
           </button>
-          <button
-            className="text-accent z-50 relative"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          <button className="text-accent z-50 relative" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+            {menuOpen ? <FiX size={22} /> : <FiMenu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -128,42 +88,26 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className={`fixed inset-0 backdrop-blur-lg flex flex-col items-center justify-center gap-8 md:hidden ${
-              dark ? 'bg-navy-light/98' : 'bg-light/98'
-            }`}
+            className="fixed inset-0 bg-bg/98 backdrop-blur-lg flex flex-col items-center justify-center gap-8 md:hidden"
           >
             {navLinks.map((link, i) => (
-              <motion.div
-                key={link.to}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.05 * i }}
-              >
+              <motion.div key={link.to} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 * i }}>
                 <Link
-                  to={link.to}
-                  smooth
-                  duration={600}
-                  offset={-80}
+                  to={link.to} smooth duration={600} offset={-80}
                   onClick={() => setMenuOpen(false)}
-                  className={`font-mono text-xl hover:text-accent transition-colors cursor-pointer ${
-                    dark ? 'text-slate-mid' : 'text-ink-mid'
-                  }`}
+                  className="text-tx-muted font-mono text-xl hover:text-accent transition-colors cursor-pointer"
                 >
                   {link.label}
                 </Link>
               </motion.div>
             ))}
-            <motion.a
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.35 }}
-              href="/Patrick_Ndaziramiye_CV.pdf"
-              download
-              className="border border-accent text-accent font-mono text-lg px-6 py-3 rounded hover:bg-accent/10 transition-all"
+            <a
+              href="/Patrick_Ndaziramiye_CV.pdf" download
               onClick={() => setMenuOpen(false)}
+              className="border border-accent text-accent font-mono text-lg px-6 py-3 rounded-lg hover:bg-accent/10 transition-all"
             >
               Resume
-            </motion.a>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
