@@ -184,13 +184,13 @@ export default function Projects() {
     : projects.filter((p) => p.category.includes(activeFilter))
 
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-16 sm:py-24">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-6"
+          className="flex items-center gap-4 mb-10 sm:mb-16"
         >
           <span className="text-mint font-mono text-lg">03.</span>
           <h2 className="text-3xl font-bold text-slate-light">Projects</h2>

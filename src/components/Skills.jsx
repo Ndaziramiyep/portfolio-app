@@ -132,13 +132,13 @@ export default function Skills() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="skills" className="py-24 bg-navy-light/30">
+    <section id="skills" className="py-16 sm:py-24 bg-navy-light/30">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-16"
+          className="flex items-center gap-4 mb-10 sm:mb-16"
         >
           <span className="text-mint font-mono text-lg">02.</span>
           <h2 className="text-3xl font-bold text-slate-light">Skills & Technologies</h2>

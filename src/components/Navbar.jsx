@@ -50,7 +50,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-4 lg:gap-8">
           {navLinks.map((link, i) => (
             <motion.div
               key={link.to}
@@ -63,7 +63,7 @@ export default function Navbar() {
                 smooth
                 duration={600}
                 offset={-80}
-                className="nav-link cursor-pointer text-sm font-mono"
+                className="nav-link cursor-pointer text-xs lg:text-sm font-mono"
               >
                 {link.label}
               </Link>
@@ -75,7 +75,7 @@ export default function Navbar() {
             transition={{ delay: 0.9 }}
             href="/Patrick_Ndaziramiye_CV.pdf"
             download
-            className="border border-mint text-mint font-mono text-sm px-4 py-2 rounded hover:bg-mint/10 transition-all duration-300"
+            className="border border-mint text-mint font-mono text-xs lg:text-sm px-3 lg:px-4 py-2 rounded hover:bg-mint/10 transition-all duration-300"
           >
             Resume
           </motion.a>

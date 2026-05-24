@@ -140,7 +140,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-light mb-3 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-light mb-3 leading-tight"
           >
             Patrick Ndaziramiye
           </motion.h1>
@@ -149,7 +149,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-muted mb-6 leading-tight"
+            className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-muted mb-6 leading-tight"
           >
             I build{' '}
             <Typewriter words={roles} />
@@ -159,7 +159,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-slate-muted text-lg max-w-2xl mb-10 leading-relaxed"
+            className="text-slate-muted text-base sm:text-lg max-w-2xl mb-10 leading-relaxed"
           >
             I'm a passionate{' '}
             <span className="text-mint">Full Stack & Mobile App Developer</span> based in Rwanda,
@@ -198,7 +198,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="flex flex-wrap gap-8 mt-16"
+            className="flex flex-wrap gap-6 sm:gap-8 mt-12 sm:mt-16"
           >
             {[
               { number: '3+', label: 'Years Experience' },

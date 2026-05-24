@@ -58,13 +58,13 @@ export default function Experience() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="experience" className="py-24 bg-navy-light/30">
+    <section id="experience" className="py-16 sm:py-24 bg-navy-light/30">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-16"
+          className="flex items-center gap-4 mb-10 sm:mb-16"
         >
           <span className="text-mint font-mono text-lg">04.</span>
           <h2 className="text-3xl font-bold text-slate-light">Experience</h2>
@@ -93,9 +93,9 @@ export default function Experience() {
                   whileHover={{ x: 4 }}
                   className={`bg-navy-light rounded-2xl p-6 border-l-4 ${exp.color} border border-navy-lighter hover:border-mint/30 transition-all duration-300 hover:shadow-lg hover:shadow-mint/5`}
                 >
-                  <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
-                    <div>
-                      <h3 className="text-slate-light font-bold text-xl">{exp.role}</h3>
+                  <div className="flex flex-wrap items-start justify-between gap-2 mb-4">
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-slate-light font-bold text-lg sm:text-xl leading-tight">{exp.role}</h3>
                       <div className="flex items-center gap-2 mt-1">
                         <FiBriefcase size={14} className="text-mint" />
                         <span className="text-mint font-semibold">{exp.company}</span>
@@ -105,7 +105,7 @@ export default function Experience() {
                         </span>
                       </div>
                     </div>
-                    <div className="text-right space-y-1">
+                    <div className="text-left sm:text-right space-y-1 flex-shrink-0">
                       <div className="flex items-center gap-1.5 text-slate-muted text-sm">
                         <FiCalendar size={13} />
                         <span className="font-mono">{exp.period}</span>

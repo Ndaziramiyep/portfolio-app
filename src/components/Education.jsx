@@ -67,13 +67,13 @@ export default function Education() {
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="education" className="py-24">
+    <section id="education" className="py-16 sm:py-24">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-16"
+          className="flex items-center gap-4 mb-10 sm:mb-16"
         >
           <span className="text-mint font-mono text-lg">05.</span>
           <h2 className="text-3xl font-bold text-slate-light">Education</h2>
@@ -91,18 +91,18 @@ export default function Education() {
               whileHover={{ x: 4 }}
               className={`bg-navy-light rounded-2xl p-6 border-l-4 ${edu.color} border border-navy-lighter hover:border-mint/30 transition-all duration-300`}
             >
-              <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                <div className="flex items-start gap-4">
+              <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div className="flex items-start gap-3 sm:gap-4 min-w-0 flex-1">
                   <div className="w-12 h-12 rounded-xl bg-navy border border-navy-lighter flex items-center justify-center flex-shrink-0">
                     <FiBook className="text-mint" size={20} />
                   </div>
                   <div>
-                    <h3 className="text-slate-light font-bold text-xl leading-tight">{edu.degree}</h3>
+                    <h3 className="text-slate-light font-bold text-lg sm:text-xl leading-tight">{edu.degree}</h3>
                     <p className="text-mint font-semibold mt-0.5">{edu.school}</p>
                     <p className="text-slate-muted text-sm">{edu.faculty}</p>
                   </div>
                 </div>
-                <div className="space-y-1.5">
+                <div className="space-y-1.5 flex-shrink-0">
                   <div className="flex items-center gap-1.5 text-slate-muted text-sm">
                     <FiCalendar size={13} />
                     <span className="font-mono">{edu.period}</span>
@@ -120,12 +120,12 @@ export default function Education() {
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 mt-4">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mt-4">
                 <div>
                   <h4 className="text-slate-mid text-sm font-semibold mb-3 flex items-center gap-2">
                     <FiBook size={14} className="text-mint" /> Relevant Coursework
                   </h4>
-                  <div className="grid grid-cols-2 gap-1.5">
+                  <div className="grid grid-cols-1 xs:grid-cols-2 gap-1.5">
                     {edu.relevant.map((course) => (
                       <div key={course} className="flex items-center gap-1.5 text-slate-muted text-xs">
                         <span className="text-mint">▸</span>

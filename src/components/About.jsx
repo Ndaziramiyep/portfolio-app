@@ -41,21 +41,21 @@ export default function About() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="py-16 sm:py-24">
       <div className="section-container" ref={ref}>
         {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-16"
+          className="flex items-center gap-4 mb-10 sm:mb-16"
         >
           <span className="text-mint font-mono text-lg">01.</span>
           <h2 className="text-3xl font-bold text-slate-light">About Me</h2>
           <div className="flex-1 h-px bg-navy-lighter max-w-xs" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Text content */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -117,7 +117,7 @@ export default function About() {
             </div>
 
             {/* Highlight cards */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {highlights.map(({ icon: Icon, title, desc }, i) => (
                 <motion.div
                   key={title}

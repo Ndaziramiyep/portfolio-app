@@ -56,13 +56,13 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-navy-light/30">
+    <section id="contact" className="py-16 sm:py-24 bg-navy-light/30">
       <div className="section-container" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-4 mb-6"
+          className="flex items-center gap-4 mb-10 sm:mb-16"
         >
           <span className="text-mint font-mono text-lg">06.</span>
           <h2 className="text-3xl font-bold text-slate-light">Get In Touch</h2>
@@ -73,13 +73,13 @@ export default function Contact() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.2 }}
-          className="text-slate-muted max-w-2xl mb-12 text-lg"
+          className="text-slate-muted max-w-2xl mb-10 sm:mb-12 text-base sm:text-lg"
         >
           I'm currently open to new opportunities — whether it's a full-time role, freelance project,
           or just a tech conversation. My inbox is always open. Let's build something great together!
         </motion.p>
 
-        <div className="grid lg:grid-cols-5 gap-10">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-10">
           {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
